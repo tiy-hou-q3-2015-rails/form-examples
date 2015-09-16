@@ -1,0 +1,12 @@
+
+<%= link_to 'Edit this Waffle', "/waffles/#{@waffle.id}/edit" %>
+
+<div class="waffle">
+  <h1><%= @waffle.name %></h1>
+  <%= image_tag(@waffle.photo) %>
+
+
+  <p><%= @waffle.toppings %></p>
+
+
+</div>

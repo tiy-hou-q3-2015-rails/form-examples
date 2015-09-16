@@ -1,0 +1,30 @@
+
+
+<%= form_for @waffle  do |f| %>
+
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %><em><%= @waffle.errors[:name].join(", ") %></em>
+  </div>
+
+  <div>
+    <%= f.label :photo %>
+    <%= f.text_field :photo %><em><%= @waffle.errors[:photo].join(", ") %></em>
+  </div>
+
+  <div>
+    <%= f.label :active %>
+    <%= f.check_box :active %><em><%= @waffle.errors[:active].join(", ") %></em>
+  </div>
+
+  <div>
+    <%= f.label :toppings %>
+    <%= f.text_field :toppings %><em><%= @waffle.errors[:toppings].join(", ") %></em>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>

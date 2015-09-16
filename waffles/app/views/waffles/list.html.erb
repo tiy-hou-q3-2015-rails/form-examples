@@ -1,0 +1,21 @@
+<h1>Waffles</h1>
+
+<%= link_to new_waffle_path do %>
+  <i class="fa fa-plus"></i>Add New Waffle
+<% end %>
+
+<div class="waffles">
+  <% @waffles.each do |waffle| %>
+    <div class="waffle">
+      <%= link_to "/waffles/#{waffle.id}" do %>
+        <%= image_tag(waffle.photo) %>
+      <% end %>
+
+      <h6><%= waffle.name %></h6>
+      <p><%= waffle.toppings %></p>
+
+
+    </div>
+  <% end %>
+
+</div>
