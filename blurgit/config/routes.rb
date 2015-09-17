@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+
+  root 'homepage#list'
+
+  get "/about-blurg-it" => 'homepage#about', as: :about
+
+  get 'articles/:id' => 'articles#detail', as: :article
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
