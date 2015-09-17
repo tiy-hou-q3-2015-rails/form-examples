@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new params.require(:article).permit(:title, :body)
+    @article = Article.new article_params
     if @article.save
       redirect_to root_path
     else
@@ -22,10 +22,14 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find params[:id]
-    if @article.update params.require(:article).permit(:title, :body)
+    if @article.update article_params
       redirect_to article_path(id: @article.id)
     else
       render :edit
     end
+  end
+
+  def article_params
+    params.require(:article).permit(:title, :body, :publish_date)
   end
 end

@@ -1,6 +1,6 @@
 class HomepageController < ApplicationController
   def list
-    @articles =  Article.all.order("created_at desc")
+    @articles =  Article.where("publish_date <= '#{Date.today}'").order("publish_date desc")
   end
 
   def about
