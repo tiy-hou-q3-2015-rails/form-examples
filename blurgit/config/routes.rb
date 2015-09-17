@@ -5,7 +5,12 @@ Rails.application.routes.draw do
 
   get "/about-blurg-it" => 'homepage#about', as: :about
 
+  get 'articles/new' => 'articles#new', as: :new_article
   get 'articles/:id' => 'articles#detail', as: :article
+  post 'articles' => 'articles#create', as: :articles
+  patch 'articles/:id' => 'articles#update'
+
+  get 'articles/:id/edit' => 'articles#edit', as: :edit_article
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
