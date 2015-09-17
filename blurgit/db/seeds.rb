@@ -10,5 +10,7 @@
 5.times do
   article = Article.new
   article.title = Faker::Company.catch_phrase
+  article.body = Faker::Lorem.paragraphs(3).join("\n\n")
+
   article.save
 end
